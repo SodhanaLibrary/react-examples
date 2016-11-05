@@ -5,7 +5,7 @@ var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "8888";
+const PORT = process.env.PORT || "9000";
 
 // global css
 loaders.push({
@@ -41,7 +41,7 @@ loaders.push({
 module.exports = {
 	entry: [
 		'react-hot-loader/patch',
-		'./src/index.jsx' // your app's entry point
+		'./src/sample/index.js' // your app's entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
 	output: {

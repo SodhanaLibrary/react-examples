@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/index.jsx'
+		'./src/sample/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public'),
+		path: path.join(__dirname, 'public/sample'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
