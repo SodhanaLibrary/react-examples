@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/transition/index.js'
+		'./src/redux-todo/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/transition'),
+		path: path.join(__dirname, 'public/redux-todo'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
