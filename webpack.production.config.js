@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/redux-todo/index.js'
+		'./src/tubular/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/redux-todo'),
+		path: path.join(__dirname, 'public/tubular'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {

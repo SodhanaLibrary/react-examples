@@ -41,7 +41,7 @@ loaders.push({
 module.exports = {
 	entry: [
 		'react-hot-loader/patch',
-		'./src/redux-todo/index.js' // your app's entry point
+		'./src/tubular/index.js' // your app's entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
 	output: {
