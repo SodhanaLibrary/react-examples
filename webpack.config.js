@@ -41,7 +41,7 @@ loaders.push({
 module.exports = {
 	entry: [
 		'react-hot-loader/patch',
-		'./src/tubular/index.js' // your app's entry point
+		'./src/gifPreview/index.js' // your app's entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
 	output: {
@@ -55,7 +55,7 @@ module.exports = {
 		loaders
 	},
 	devServer: {
-		contentBase: "./public1",
+		contentBase: "./public",
 		// do not print bundle build stats
 		noInfo: true,
 		// enable HMR

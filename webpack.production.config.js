@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/tubular/index.js'
+		'./src/gifPreview/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/tubular'),
+		path: path.join(__dirname, 'public/gifPreview'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
