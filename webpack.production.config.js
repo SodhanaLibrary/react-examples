@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/gifPreview/index.js'
+		'./src/tweet-parser/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/gifPreview'),
+		path: path.join(__dirname, 'public/tweet-parser'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
