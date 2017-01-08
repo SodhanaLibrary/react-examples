@@ -1,5 +1,4 @@
-exports.CallingCodes = function() {
-  return [
+export default [
     {country : 'Afghanistan',	value : '93',	code : 'AF'},
     {country : 'Albania',	value : '355',	code : 'AL'},
     {country : 'Algeria',	value : '213',	code : 'DZ'},
@@ -244,4 +243,3 @@ exports.CallingCodes = function() {
     {country : 'Zambia',	value : '260',	code : 'ZM'},
     {country : 'Zimbabwe',	value : '263',	code : 'ZW'}
   ];
-};

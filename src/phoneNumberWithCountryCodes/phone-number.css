@@ -1,0 +1,20 @@
+.phone-number {
+  display: flex;
+}
+
+.phone-number--country {
+  flex: 1 1 30%;
+}
+
+.phone-number--number {
+  flex: 1 1 70%;
+}
+
+.Select-menu-outer {
+  width: 200px;
+}
+
+.message {
+  font-weight: bold;
+  color: brown;
+}

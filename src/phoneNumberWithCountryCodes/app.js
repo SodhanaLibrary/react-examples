@@ -1,50 +1,88 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-select/dist/react-select.min.css';
+import './phone-number.css';
 import React from 'react';
-import Languages from './Languages';
+import CallingCodes from './CallingCodes';
 import {FormControl} from 'react-bootstrap';
 import Select from 'react-select';
+import {PhoneNumberFormat, PhoneNumberUtil} from 'google-libphonenumber';
 
 export default class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      lang:'EN'
+      country:'',
+      number:'',
+      message:''
     }
-    this.onSelect = this.onSelect.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.onSelect2 = this.onSelect2.bind(this);
+    this.validatePhoneNumber = this.validatePhoneNumber.bind(this);
   }
 
-  onSelect(event) {
+  onChange(event) {
     this.setState({
-      lang:event.target.value
+      number:event.target.value
     });
+    this.validatePhoneNumber('+'+this.state.country+' '+event.target.value);
   }
 
-  onSelect2(language) {
+  onSelect2(cntrObj) {
     this.setState({
-      lang:language.code
+      country:cntrObj.value
     });
+    this.validatePhoneNumber('+'+cntrObj.value+' '+this.state.number);
+  }
+
+  validatePhoneNumber(phoneNumber) {
+    /*
+    Phone number validation using google-libphonenumber
+    */
+    let valid = false;
+    try {
+      const phoneUtil = PhoneNumberUtil.getInstance();
+      valid =  phoneUtil.isValidNumber(phoneUtil.parse(phoneNumber));
+    } catch(e) {
+      valid = false;
+    }
+    if(valid) {
+      this.setState({
+        message:'Phone number '+this.getValidNumber(phoneNumber)+' is valid',
+        color:'green'
+      });
+    } else {
+      this.setState({
+        message:'Phone number '+phoneNumber+' is not valid',
+        color:'red'
+      });
+    }
+  }
+
+  getValidNumber(phoneNumber) {
+    const phoneUtil = PhoneNumberUtil.getInstance();
+    const parsedNumber = phoneUtil.parse(phoneNumber);
+    return phoneUtil.format(parsedNumber, PhoneNumberFormat.INTERNATIONAL)
   }
 
   render() {
     return (
       <div>
-        <h1>Select box for languages</h1>
-        <select value={this.state.lang} onChange={this.onSelect}>
-           {Languages.map((language) => <option value={language.code}>{language.value}</option>)}
-        </select>
-        <br/><br/><br/>
-        <h1>Bootstrap Select box for languages</h1>
-        <FormControl value={this.state.lang} onChange={this.onSelect} componentClass="select" placeholder="select">
-          {Languages.map((language) => <option value={language.code}>{language.value}</option>)}
-        </FormControl>
-        <br/><br/><br/>
-        <h1>React Select2 for languages</h1>
-        <Select value={this.state.lang} onChange={this.onSelect2} placeholder="select"
-           options={Languages} labelKey="value" valueKey="code">
-        </Select>
+        <h1>Phone number with country codes using ReactJS</h1>
+        <div className="phone-number" style={{display:'flex'}}>
+          <div className="phone-number--country">
+            <Select value={this.state.country} onChange={this.onSelect2} placeholder="country code"
+               options={CallingCodes} labelKey="country" valueKey="value" valueRenderer={(country) => country.value}>
+            </Select>
+          </div>
+          <div className="phone-number--number">
+            <FormControl value={this.state.number} onChange={this.onChange} placeholder="phone number">
+            </FormControl>
+          </div>
+        </div>
+        <div className="message" style={{color:this.state.color}}>
+          {this.state.message}
+        </div>
       </div>
     )
   }

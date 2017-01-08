@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/timeZones/index.js'
+		'./src/phoneNumberWithCountryCodes/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/timeZones'),
+		path: path.join(__dirname, 'public/phoneNumberWithCountryCodes'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
