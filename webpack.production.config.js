@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/tweet-parser/index.js'
+		'./src/timeZones/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/tweet-parser'),
+		path: path.join(__dirname, 'public/timeZones'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
