@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/phoneNumberWithCountryCodes/index.js'
+		'./src/text-overflow-tooltip/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/phoneNumberWithCountryCodes'),
+		path: path.join(__dirname, 'public/text-overflow-tooltip'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
