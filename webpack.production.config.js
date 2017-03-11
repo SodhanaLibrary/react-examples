@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/text-overflow-tooltip/index.js'
+		'./src/fit-items-popover/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/text-overflow-tooltip'),
+		path: path.join(__dirname, 'public/fit-items-popover'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {

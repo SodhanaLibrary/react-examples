@@ -11,10 +11,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div style={{
-        width:'500px',
-        margin:'auto'
-      }}>
+      <div>
         <h1>It Works </h1>
         <p>Mouser hover on below text</p>
         <TextOverflowTooltip maxWidth="100px">give some overflow text here</TextOverflowTooltip>
