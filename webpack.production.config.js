@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/fit-items-popover/index.js'
+		'./src/react-magnify/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/fit-items-popover'),
+		path: path.join(__dirname, 'public/react-magnify'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {

@@ -1,0 +1,23 @@
+.parent {
+  overflow: hidden;
+	transition-property: height;
+	transition-duration: 1s;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+  background-color: blue;
+  transition-timing-function: cubic-bezier(.99,.7,.3,.01)
+}
+
+.child {
+	transition-property: all;
+	transition-duration: 1s;
+	transform: rotateX(0deg);
+	transform-origin: top;
+  background-color: yellow;
+  transition-timing-function: linear;
+  margin: 0px;
+}
+
+.parent--fold .child {
+  transform: rotateX(-90deg);
+}
