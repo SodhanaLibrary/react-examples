@@ -41,7 +41,7 @@ loaders.push({
 module.exports = {
 	entry: [
 		'react-hot-loader/patch',
-		'./src/react-magnify/index.js' // your app's entry point
+		'./src/date-time-picker4/index.js' // your app's entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
 	output: {

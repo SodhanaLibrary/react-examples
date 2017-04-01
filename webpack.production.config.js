@@ -27,10 +27,10 @@ loaders.push({
 
 module.exports = {
 	entry: [
-		'./src/react-magnify/index.js'
+		'./src/date-time-picker4/index.js'
 	],
 	output: {
-		path: path.join(__dirname, 'public/react-magnify'),
+		path: path.join(__dirname, 'public/date-time-picker4'),
 		filename: '[chunkhash].js'
 	},
 	resolve: {
